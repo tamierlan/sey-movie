@@ -1,13 +1,90 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  margin-bottom: 15px;
+  border-bottom: 4px solid grey;
+  height: 80px;
+  width: 100%;
+  background: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f1f1f1;
+}
+nav a {
+  text-decoration: none;
+  color: grey;
+  font-size: 40px;
+  line-height: 80px;
+}
+nav .logo {
+  border-radius: 10px;
+  border: 4px solid grey;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-left: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+  height: 60px;
+}
+nav .logo-text {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 4px solid grey;
+  height: 60px;
+  float: right;
+  width: 250px;
+  margin-right: 50px;
+  font-size: 40px;
+  line-height: 60px;
+  padding-left: 10px;
+}
+.App {
+  float: left;
+  margin: 0 -5px;
+}
+.App:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  /* height: 400px; */
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.name-wrapper {
+  height: 50px;
+  width: 100%;
+}
+.movie-wrapper img {
+  margin: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .column {
+    width: 33.3%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
