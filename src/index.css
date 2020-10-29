@@ -7,13 +7,13 @@ body {
 }
 
 nav {
+  position: fixed;
   margin-bottom: 15px;
-  border-bottom: 4px solid grey;
+  /* border-bottom: 4px solid grey; */
   height: 80px;
   width: 100%;
   background: black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f1f1f1;
 }
 nav a {
   text-decoration: none;
@@ -23,7 +23,7 @@ nav a {
 }
 nav .logo {
   border-radius: 10px;
-  border: 4px solid grey;
+  border: 4px solid white;
   font-size: 40px;
   margin-top: 10px;
   margin-left: 50px;
@@ -32,21 +32,37 @@ nav .logo {
   float: left;
   height: 60px;
 }
-nav .logo-text {
-  margin-top: 10px;
+nav input {
+  float: right;
+  margin-top: 20px;
   border-radius: 10px;
-  border: 4px solid grey;
-  height: 60px;
+  border: 4px solid white;
+  height: 35px;
   float: right;
   width: 250px;
   margin-right: 50px;
-  font-size: 40px;
-  line-height: 60px;
+  line-height: 35px;
   padding-left: 10px;
+  outline: 0;
+
 }
+nav .logo-text {
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 4px solid white;
+  height: 35px;
+  float: right;
+  margin-right: 50px;
+  background: white;
+  line-height: 35px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
 .App {
   float: left;
-  margin: 0 -5px;
+  margin: 0 5px;
+  margin-top: 100px;
 }
 .App:after {
   content: "";
@@ -71,6 +87,29 @@ nav .logo-text {
 }
 .movie-wrapper img {
   margin: 5px;
+}
+
+.opened {
+  display: block;
+}
+.closed {
+  display: none;
+}
+
+.grades {
+  color: orange;
+}
+
+.last-page, .next-page {
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 2px solid grey;
+  border-radius: 5px;
+  outline: 0;
+}
+.next-page {
+  float: right;
 }
 
 @media screen and (max-width: 1000px) {

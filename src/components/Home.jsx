@@ -1,34 +1,43 @@
 import React from 'react';
-import { FaStar } from 'react-icons/fa';
-import { BsStarHalf } from 'react-icons/bs';
-import { BsStar } from 'react-icons/bs';
-import Movies from './Movies';
+import Card from './Card';
 
 export default function Home(props) {
+  const { data, img_http, img_size } = props.state;
 
-  const image = 'http://image.tmdb.org/t/p/';
-  const image_size = ['w45', 'w185', 'h632', 'original']
+  const max_pop = Math.max(...data.map(i => i.popularity));
+  const min_pop = Math.min(...data.map(i => i.popularity));
+
+  // console.log('max ', max_pop)
+  // console.log('min ', min_pop)
 
   return (
-    <div className='App'>
-    {
-      props.data.data.map(e => {
-        return (
-          <div className='column'>
-            <div className='card' key={e.id}>
-              <div className='name-wrapper'>
-                <h3>{e.name}</h3>
-              </div>
-              <img style={{height: '130px'}} src={image + image_size[1] + e.profile_path} alt={e.name} />
-              <p>known as <strong>{e.known_for_department}</strong></p>
-              <p>{e.gender === 2 ? 'male actor' : 'female actor'}</p>
-              <Movies data={e.known_for} />
-              <p><FaStar /><FaStar /><BsStarHalf /><BsStar />  { e.popularity}</p>
-            </div>
-          </div>
-        )
-      })
-    }
-    </div>
-  )
+    data.map(e => {
+      let id = e.id;
+      let name = e.name;
+      let image = img_http + img_size[1] + e.profile_path;
+      let known_as = e.known_for_department;
+      let gender = e.gender;
+      let movies = e.known_for;
+      let fame = e.popularity
+
+
+
+      return (
+        <Card
+          id={id}
+          key={id}
+          name={name}
+          fame={fame}
+          image={image}
+          gender={gender}
+          movies={movies}
+          max_pop={max_pop}
+          min_pop={min_pop}
+          known_as={known_as}
+          img_http={img_http}
+          img_size={img_size}
+        />
+      );
+    })
+  );
 }
